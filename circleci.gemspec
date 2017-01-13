@@ -14,14 +14,13 @@ Gem::Specification.new do |s|
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
   s.required_ruby_version = '>= 2.0.0'
-  s.cert_chain            = %w[certs/mtchavez.pem]
-  s.signing_key           = File.join(Gem.user_home, '.ssh', 'gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
+  # s.cert_chain            =
+  # s.signing_key           =
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls',        '~> 0.8.14', '>= 0.8.14'
   s.add_development_dependency 'dotenv',           '~> 2.1.1', '>= 2.1.1'
   s.add_development_dependency 'gemcutter',        '~> 0.7.1', '>= 0.7.1'
-  s.add_development_dependency 'multi_json',       '~> 1.12.1', '>= 1.12.1'
   s.add_development_dependency 'pry',              '~> 0.10.4', '>=  0.10.4'
   s.add_development_dependency 'rake',             '~> 11.2.2', '>= 11.2.2'
   s.add_development_dependency 'redcarpet',        '~> 3.3.4', '>= 3.3.4'
