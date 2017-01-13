@@ -27,18 +27,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 23:33:13 GMT
+      - Fri, 13 Jan 2017 15:49:42 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=RX%2FpeMd7JLSiET6ucnZC4WXpp19ATIoQwqYZIyLuqQ4K%2BUiQ8c5cYTC92oTk0CxskuGKylOnq%2BGOxjx%2F5Vprj1OaBcesgd0bAPsLNZN2f8lijZtoElk8j2xxcjdbnKRubT7%2Bkzof900xnJno2SPhobXWZedtV2ILVtyH3%2BLsjJ4nNNC8XoGhP%2BE40hHUZAaE%2FN%2BdyMZdAbI31K05ocjmzL9Yht3bXFjYl7WJUmMrc6E%3D--EsXUDd8NORtlAAJXP16T8a3Ws%2Fvc9lzFOPZtYrASwf4%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 23:08:07 +0000;Max-Age=31536000;Secure
+      - ring-session=AkwgJT6vZQxpBxOV%2F2hk9VrCNWgk2nekaLtbS204dccF%2F7o86finPGJA0EOpIqzUpsUnPpxVWixsWrWXoPf05p%2B22iSOytB5ROnJZZJ%2F1Iwh0eKEcd3EK%2BNMt8HX8E%2BjrIecO9plLB%2F8qIDQFA0U%2BLc%2FH%2FSud9jhgAr%2F7HmCit6vpLiuJu%2FDj1FeDql%2BUpVlv5eh3qKoXbgWYULnqvVms%2BQkiqGVbpzFxU1EsiRuhmA%3D--PJeyBdHRjs7dDKRnI0IQi2CPFsRm0ryKsKgCLxyzKeo%3D;Path=/;HttpOnly;Expires=Sat,
+        13 Jan 2018 10:13:00 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-51a59da9
+      - i-9e3e710d
       X-Circleci-Request-Id:
-      - b9111386-6683-46e6-a929-e81f58a981ac
+      - f5c35f63-0399-4f7f-b35a-2cde5d1ea9c1
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -59,5 +59,5 @@ http_interactions:
       encoding: UTF-8
       string: '[{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 23:31:51 GMT
+  recorded_at: Fri, 13 Jan 2017 15:49:37 GMT
 recorded_with: VCR 3.0.3

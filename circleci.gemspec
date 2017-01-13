@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.summary               = 'Circle CI REST API gem'
   s.description           = 'Ruby gem for Circle CI REST API'
   s.licenses              = %w[MIT]
-  s.authors               = %w[Chavez]
-  s.email                 = 'contact@el-chavez.me'
+  s.authors               = %w[Chavez Modolabs]
+  s.email                 = 'gem@modolabs.com'
   s.files                 = Dir.glob('{bin,lib}/**/*') + %w[README.md]
   s.require_paths         = %w[lib]
-  s.homepage              = 'http://github.com/mtchavez/circleci'
+  s.homepage              = 'http://github.com/modolabs/circleci'
   s.rdoc_options          = %w[--charset=UTF-8 --main=README.md]
   s.extra_rdoc_files      = %w[README.md]
   s.required_ruby_version = '>= 2.0.0'

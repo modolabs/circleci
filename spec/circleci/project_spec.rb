@@ -349,7 +349,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
   describe 'ssh_key' do
     context 'successfully' do
-      let(:res) { project.add_ssh_key test_rsa_private_key, 'hostname' }
+      let(:res) { project.ssh_key test_rsa_private_key, 'hostname' }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -358,7 +358,7 @@ RSpec.describe CircleCi::Project, :vcr do
     end
 
     context 'unsuccessfully' do
-      let(:res) { project.add_ssh_key 'RSA Private Key', 'hostname' }
+      let(:res) { project.ssh_key 'RSA Private Key', 'hostname' }
       let(:message) { 'it looks like private key is invalid key.  Double check' }
 
       it 'is verified by response' do
@@ -462,9 +462,9 @@ RSpec.describe CircleCi::Project, :vcr do
     end
   end
 
-  describe 'list_envvars' do
+  describe 'envvar' do
     context 'successfully' do
-      let(:res) { project.list_envvars }
+      let(:res) { project.envvar }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)

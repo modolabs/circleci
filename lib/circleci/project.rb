@@ -31,7 +31,7 @@ module CircleCi
     #
     # @param build_num [Integer] - The build number
     #
-    # @return          [CircleCi::Build] - Build object 
+    # @return          [CircleCi::Build] - Build object
     def get_build(build_num)
       Build.new(self, build_num)
     end
@@ -39,12 +39,15 @@ module CircleCi
     ##
     # Build the latest push for this branch of a specific project
     #
-    # @param branch   [String] - Name of branch
-    # @param body     [Hash] - Optional post body with build parameters
+    # @param branch            [String] - Name of branch
+    # @param params            [Hash] - Optional parameters for build, See https://circleci.com/docs/api/#new-build
+    # @param build_env         [Hash] - Optional build environment variables
     #
-    # @return         [CircleCi::Response] - Response object
-    def build(branch, body = {})
-      CircleCi.request("#{base_path}/tree/#{branch}").post(body) 
+    # @return  [CircleCi::Response] - Response object
+    def build(branch, params = {}, build_env = {})
+      params[:build_parameters] ||= {}
+      params[:build_parameters].merge! build_env
+      CircleCi.request("#{base_path}/tree/#{branch}").post(params)
     end
 
     ##
@@ -62,14 +65,6 @@ module CircleCi
     # @return         [CircleCi::Response] - Response object
     def enable
       CircleCi.request("#{base_path}/enable").post
-    end
-
-    ##
-    # Get the project envvars
-    #
-    # @return         [CircleCi::Response] - Response object
-    def envvar
-      CircleCi.request("#{base_path}/envvar").get
     end
 
     ##
@@ -157,12 +152,17 @@ module CircleCi
     ##
     # Add a ssh key to a project
     #
-    # @param key      [String] - The ssh private key
+    # @param key      [String] - The RSA private key
     # @param hostname [String] - The hostname identified by the key
     # @return         [CircleCi::Response] - Response object
-    def add_ssh_key(key, hostname)
+    def ssh_key(key, hostname)
       body = { hostname: hostname, private_key: key }
       CircleCi.request("#{base_path}/ssh-key").post(body)
+    end
+
+    def build_ssh_key(build_num, key, hostname)
+      body = { hostname: hostname, private_key: key }
+      CircleCi.request("#{base_path}/#{build_num}/ssh-users").post(body)
     end
 
     ##
@@ -186,7 +186,7 @@ module CircleCi
     # List project envvars
     #
     # @return         [CircleCi::Response] - Response object
-    def list_envvars
+    def envvar
       CircleCi.request("#{base_path}/envvar").get
     end
 
@@ -206,7 +206,7 @@ module CircleCi
       CircleCi.request("#{base_path}/envvar/#{name}").delete
     end
 
-  private 
+  private
     def base_path
       @base_path ||= "/project/#{vcs_type}/#{username}/#{name}"
     end

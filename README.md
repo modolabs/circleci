@@ -78,7 +78,7 @@ end
   * [Me](#me)
 * [Project](#project)
   * [All](#all)
-  * [Build Branch](#build_branch)
+  * [Build](#build)
   * [Build SSH Key](#build_ssh_key)
   * [Clear Cache](#clear_cache)
   * [Enable](#enable)
@@ -196,26 +196,27 @@ Example response
 } ]
 ```
 
-#### [build_branch](#build_branch)
+#### [build](#build)
 
-Endpoint: `/project/:username/:repository/tree/:branch`
+Endpoint: `/project/:vcs_type/:username/:repository/tree/:branch`
 
 Build a specific branch of a project
 
 ```ruby
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch'
+project = CircleCi::Project.new :github, 'username', 'reponame'
+res = project.build 'branch'
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 
 # Passing build parameters in the post body
-build_params = { build_parameters: { 'MY_TOKEN' => '123asd123asd' } }
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', {}, build_params
+build_params = { 'MY_TOKEN' => '123asd123asd' }
+res = project.build 'branch', nil, build_params
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 
 # Adding URL params for revision or parallel
 params = { revision: 'fda12345asdf', parallel: 2 }
-res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', params
+res = project.build 'branch', params
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 ```
@@ -297,21 +298,16 @@ Example response
 }
 ```
 
-It also supports the Experimental Parameterized Builds
-
-```
-  build_environment_variables = {"ENV_VAR1" => "VALUE1", "ENV_VAR2" => "VALUE2"}
-  res = CircleCi::Project.build_branch 'username', 'reponame', 'branch', build_environment_variables
-```
-
 #### [build_ssh_key](#build_ssh_key)
 
-Endpoint: `/project/:username/:repository/:build_num/ssh-users`
+Endpoint: `/project/:vcs_type/:username/:repository/:build_num/ssh-users`
 
 Adds a user to the build's SSH permissions.
 
 ```ruby
-res = CircleCi::Project.build_ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build_num = 50
+res = project.build_ssh_key build_num, 'RSA private key', 'hostname'
 res.success?
 ```
 
@@ -324,12 +320,13 @@ Empty response body with a `200 OK` successful response code
 
 #### [clear_cache](#clear_cache)
 
-Endpoint: `/project/:username/:repository/build-cache`
+Endpoint: `/project/:vcs_type/:username/:repository/build-cache`
 
 Clears the cache for a project
 
 ```ruby
-res = CircleCi::Project.clear_cache
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.clear_cache
 res.body['status']
 ```
 
@@ -343,11 +340,12 @@ Example response
 
 #### [delete_checkout_key](#delete_checkout_key)
 
-Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+Endpoint: `/project/:vcs_type/:username/:repository/checkout-key/:fingerprint`
 
 Delete a checkout key for a project by supplying the fingerprint of the key.
 ```ruby
-res = CircleCi::Project.delete_checkout_key 'username', 'reponame', 'fingerprint'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.delete_checkout_key 'fingerprint'
 res.success?
 res.body
 ```
@@ -360,13 +358,14 @@ Example response
 
 #### [enable](#enable)
 
-Endpoint: `/project/:username/:repository/enable`
+Endpoint: `/project/:vcs_type/:username/:repository/enable`
 
 Enable a project in CircleCI. Causes a CircleCI SSH key to be added to
 the GitHub. Requires admin privilege to the repository.
 
 ```ruby
-res = CircleCi::Project.enable 'username', 'reponame'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.enable
 res.success?
 ```
 
@@ -449,12 +448,13 @@ Example response
 
 #### [envvar](#envvar)
 
-Endpoint: `/project/:username/:project/envvar`
+Endpoint: `/project/:vcs_type/:username/:project/envvar`
 
 Get a list of environment variables for a project
 
 ```ruby
-res = CircleCi::Project.envvar 'username', 'repo'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.envvar
 res.success?
 ```
 
@@ -466,12 +466,13 @@ Example response
 
 #### [follow](#follow)
 
-Endpoint: `/project/:username/:repository/follow`
+Endpoint: `/project/:vcs_type/:username/:repository/follow`
 
 Follow a project
 
 ```ruby
-res = CircleCi::Build.follow 'username', 'repo'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.follow
 res.success?
 ```
 
@@ -486,11 +487,12 @@ Example response
 
 #### [get_checkout_key](#get_checkout_key)
 
-Endpoint: `/project/:username/:repository/checkout-key/:fingerprint`
+Endpoint: `/project/:vcs_type/:username/:repository/checkout-key/:fingerprint`
 
 Get a checkout key for a project by supplying the fingerprint of the key.
 ```ruby
-res = CircleCi::Project.get_checkout_key 'username', 'reponame', 'fingerprint'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.get_checkout_key 'fingerprint'
 res.success?
 res.body
 ```
@@ -509,12 +511,13 @@ Example response
 
 #### [list_checkout_keys](#list_checkout_keys)
 
-Endpoint: `/project/#{username}/#{project}/checkout-key`
+Endpoint: `/project/:vcs_type/#{username}/#{project}/checkout-key`
 
 List checkout keys
 
 ```ruby
-res = CircleCi::Project.checkout_keys 'username', 'repo'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.checkout_keys
 res.success?
 ```
 
@@ -534,12 +537,13 @@ Example response
 
 #### [new_checkout_key](#new_checkout_key)
 
-Endpoint: `/project/:username/:repository/checkout-key`
+Endpoint: `/project/:vcs_type/:username/:repository/checkout-key`
 
 Create an ssh key used to access external systems that require SSH key-based authentication.
 Takes a type of key to create which an be `deploy-key` or `github-user-key`.
 ```ruby
-res = CircleCi::Project.new_checkout_key 'username', 'reponame', 'deploy-key'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.new_checkout_key 'deploy-key'
 res.success?
 res.body
 ```
@@ -558,18 +562,19 @@ Example response
 
 #### [recent_builds](#project_recent_builds)
 
-Endpoint: `/project/:username/:repository`
+Endpoint: `/project/:vcs_type/:username/:repository`
 
 Build summary for each of the last 30 recent builds, ordered by build_num.
 
 ```ruby
-res = CircleCi::Project.recent_builds 'username', 'reponame'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.recent_builds
 
 # Use params to filter by status
-# res = CircleCi::Project.recent_builds 'username', 'reponame', filter: 'failed'
+res = project.recent_builds filter: 'failed'
 
 # Use params to limit and give an offset
-# res = CircleCi::Project.recent_builds 'username', 'reponame', limit: 10, offset: 50
+res = project.recent_builds limit: 10, offset: 50
 
 res.success?
 res.body
@@ -606,12 +611,13 @@ Example response
 
 #### [recent_builds_branch](#recent_builds_branch)
 
-Endpoint: `/project/:username/:repository/tree/:branch`
+Endpoint: `/project/:vcs_type/:username/:repository/tree/:branch`
 
 Build summary for each of the last 30 recent builds for a specific branch, ordered by build_num.
 
 ```ruby
-res = CircleCi::Project.recent_builds_branch 'username', 'reponame', 'branch'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = CircleCi::Project.recent_builds_branch 'branch'
 res.success?
 res.body
 ```
@@ -647,12 +653,13 @@ Example response
 
 #### [settings](#settings)
 
-Endpoint: `/project/:username/:repository/settings`
+Endpoint: `/project/:vcs_type/:username/:repository/settings`
 
 Get project settings
 
 ```ruby
-res = CircleCi::Project.settings 'username', 'repo'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = CircleCi::Project.settings
 res.success?
 ```
 
@@ -725,13 +732,15 @@ Example response
 
 #### [set_envvar](#set_envvar)
 
-Endpoint: `/project/:username/:project/envvar`
+Endpoint: `/project/:vcs_type/:username/:project/envvar`
 
 Creates a new environment variable for a project
 
 ```ruby
-environment = { name: 'foo', value: 'bar' }
-res = CircleCi::Project.envvar 'username', 'repo', environment
+project = CircleCi::Project.new :github, 'username', 'repo'
+environment = CircleCi::Envvar.new(name: 'foo', value: 'bar')
+
+res = project.envvar environment
 res.success?
 ```
 
@@ -743,13 +752,14 @@ Example response
 
 #### [ssh_key](#ssh_key)
 
-Endpoint: `/project/:username/:repository/ssh-key`
+Endpoint: `/project/:vcs_type/:username/:repository/ssh-key`
 
 Creates an ssh key that will be used to access the external system identified
 by the hostname parameter for SSH key-based authentication.
 
 ```ruby
-res = CircleCi::Project.ssh_key 'username', 'repo', 'RSA private key', 'hostname'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.ssh_key 'RSA private key', 'hostname'
 res.success?
 ```
 
@@ -762,12 +772,13 @@ Empty response body with a `200 OK` successful response code
 
 #### [unfollow](#unfollow)
 
-Endpoint: `/project/:username/:repository/unfollow`
+Endpoint: `/project/:vcs_type/:username/:repository/unfollow`
 
 Unfollow a project
 
 ```ruby
-res = CircleCi::Build.unfollow 'username', 'repo'
+project = CircleCi::Project.new :github, 'username', 'repo'
+res = project.unfollow
 res.success?
 ```
 
@@ -781,14 +792,32 @@ Example response
 
 ### [Build](#build)
 
+#### [Initializing a Build Object](#build_init)
+Its possible to get a build object from an initialized project.
+
+```ruby
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+puts build.inspect  # CircleCi::Build
+
+#otherwise you need a Project to initalize a Build
+build = CircleCi::Build.new(project, 100)
+
+puts build.inspect  # CircleCi::Build
+```
+
 #### [artifacts](#artifacts)
 
-Endpoint: `/project/:username/:repository/:build/artifacts`
+Endpoint: `/project/:vcs_type/:username/:repository/:build/artifacts`
 
 Artifacts produced by the build, returns an array of artifact details
 
 ```ruby
-res = CircleCi::Build.artifacts 'username', 'repo', 'build #'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+res = build.artifacts
 res.success?
 res.body
 ```
@@ -812,12 +841,15 @@ res.body
 
 #### [cancel](#cancel)
 
-Endpoint: `/project/:username/:repository/:build/cancel`
+Endpoint: `/project/:vcs_type/:username/:repository/:build/cancel`
 
 Cancels the build, returns a summary of the build.
 
 ```ruby
-res = CircleCi::Build.cancel 'username', 'repo', 'build #'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+res = build.cancel
 res.success?
 res.body['status'] # 'canceled'
 res.body['outcome'] # 'canceled'
@@ -859,12 +891,15 @@ Example response
 
 #### [get](#get)
 
-Endpoint: `/project/:username/:repository/:build`
+Endpoint: `/project/:vcs_type/:username/:repository/:build`
 
 Full details for a single build, including the output for all actions. The response includes all of the fields from the build summary.
 
 ```ruby
-res = CircleCi::Build.get 'username', 'repo', 'build #'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+res = build.get
 res.success?
 res.body
 ```
@@ -948,12 +983,15 @@ Example response
 
 #### [retry](#retry)
 
-Endpoint: `/project/:username/:repository/:build/retry`
+Endpoint: `/project/:vcs_type/:username/:repository/:build/retry`
 
 Retries the build, returns a summary of the new build.
 
 ```ruby
-res = CircleCi::Build.retry 'username', 'repo', 'build #'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+res = build.retry
 res.success?
 res.body['status'] # 'queued'
 res.body
@@ -990,13 +1028,16 @@ Example response
 
 #### [tests](#tests)
 
-Endpoint: `/project/:username/:repository/:build/tests`
+Endpoint: `/project/:vcs_type/:username/:repository/:build/tests`
 
 Tests endpoint to get the recorded tests for a build. Will return an array of
 the tests ran and some details.
 
 ```ruby
-res = CircleCi::Build.tests 'username', 'repo', 'build #'
+project = CircleCi::Project.new :github, 'username', 'repo'
+build = project.get_build(100)
+
+res = build.tests
 res.success?
 res.body
 ```
