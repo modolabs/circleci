@@ -45,8 +45,12 @@ module CircleCi
     #
     # @return  [CircleCi::Response] - Response object
     def build(branch, params = {}, build_env = {})
-      params[:build_parameters] ||= {}
-      params[:build_parameters].merge! build_env
+      params ||= {}
+      if build_env
+        params[:build_parameters] ||= {}
+        params[:build_parameters].merge! build_env
+      end
+
       CircleCi.request("#{base_path}/tree/#{branch}").post(params)
     end
 
