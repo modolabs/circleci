@@ -25,16 +25,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 23:52:05 GMT
+      - Wed, 18 Jan 2017 21:30:23 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=cf2aC0UBnH2M3tS6jX%2F%2F9vfaBlTyN0J8CEtW88Kk4hKW1acFiz2GH6vSaQ4S4b%2FG4QJ8k%2FRq%2FA1a94InVGIIzJZzZyG%2BAUEpnqoNrQVPBzl%2F%2FteALcXqxMhXVcghmuXmPtiz1dM5LRFrM7Mi2%2Bd0PDf8DaFUvDmHy4tBJFAdlK6fiDacwB4S2%2FsGDkR54nWiG5KcCkNTOkkn1iax5DIYL1rN%2Fk2MMTdL%2BbYXCvgrfHc%3D--pkShv019k8aUkz4n9dXr%2F8nPrJk4GcH3IhLv9vP96xU%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 23:08:02 +0000;Max-Age=31536000;Secure
+      - ring-session=srzzmTsa3PtcyW1K4kQxvAnwncR7odtnStqxIJE5oW7x4vE6jX9o798cUTzNUvrp2A3jQoa6cqjpKGALz5jQmi2MWrf7ZWYTHU03%2FSxkKJJ%2BtLgRma5WNz%2FNkO6sliDCWFAy48f7yfAbns2q1xAO4%2BJ7Tb0xte54TE%2Bm2isjVKQu%2FTE8O40m%2BemepTVgvHdCNbSg%2F8iaBM%2Bt6ukRKaiWT6er%2Bm1zUn0WOi%2FgqTnMw0Y%3D--GYMnWVreESFQPRtX4BdmTHS%2Bi0ouYbcfnDv21rRYz5c%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:12:11 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-478f0249
+      - i-e58c01eb
       X-Circleci-Request-Id:
-      - e743a933-ccd2-422d-a3a3-c1a45177f5ae
+      - ca9a1f0c-2cfb-420b-a171-3c718e310ce5
       X-Frame-Options:
       - DENY
       X-Route:
@@ -47,5 +47,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"Project not found"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 23:50:55 GMT
+  recorded_at: Wed, 18 Jan 2017 21:31:31 GMT
 recorded_with: VCR 3.0.3

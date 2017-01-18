@@ -2,7 +2,57 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/ssh-users?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/140/ssh-users?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Jan 2017 21:32:56 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=tT03kYd1%2Bov1C25dQb0BMIZp78Wx5NfrONK2UD3doddVsK4OV2KkBzRFIWjnuhU2WfkXrBybCD5bxiqTktvllpi5m%2BjKx55r5Fom8Amc3GJo9Q7aHCDsQMCAMt253BCHx5X4vHRf%2BIGLsNsl0iq24%2FQsCRHpDhY1cxmiReUQLUT5z72kwW0sBWnYheP%2FsMq%2F7cPWYBdMhYXOruZDKQAggjcxuSyoFql95iDrh1DKjzE%3D--pvuQIPk%2BnzIe8pJd27iMEg%2FWmcEgjVBH1iVTXaq5H%2BE%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:23:56 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-c44f635d
+      X-Circleci-Request-Id:
+      - b5649ee5-4366-464b-80b7-9ba44674f35a
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/ssh-users"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '29'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Build not found"}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 21:31:26 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/1/ssh-users?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,18 +75,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 20:38:34 GMT
+      - Wed, 18 Jan 2017 21:49:00 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=FF60q7TljOenO4UTTGk66dnBecRmZzJu5jqNzMIVnWkMotD2ngkOjGu5MBBMBGo5eeApwxuKvUzzQGNFCOCnOnyrWLK44p%2BTPfzvno0f3f06hMIXzSoUoYGPo4XRTKIFizp2pdRw23%2FOSCwU5yjYytnKA43Z%2Ft9H0OZZ9F6b9F1a673yKRCmv4ewhYVUmhRYvLWIeQC8Uq7T8Uodu3a7PKAafTgpiqGQcM8ckV4vlEE%3D--iTl72U6B3E0KO7mOeMJV8SKH7kq2YUAHy7f4hPQMlq0%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 19:18:16 +0000;Max-Age=31536000;Secure
+      - ring-session=EzQIIgUzt1zg0dYSVILjcNfN4ccoiYBTaFD7QQ1ErOXy0xY%2FUn6W3eKj0eaY4V%2FC71nBTQMajKhffXmHeeI8cSoFqCtTG%2BJVP%2FzANnxXqJHBAlJg6YrJdtKpSVbp7tS3Yr4eJV7lThHHAEJs5XkWxaDkaPK2eBGFk12QStO4EjR%2B%2FvyzyhmRUH81%2FX2oRzViYgPE6x0FUZCLZj3d0mhIOPw2H0Fj6m3DO%2B12FKUnvpU%3D--zMwwfPZrPt2Q6my0VxK08WxNbb6KcwoVs4Jc73h%2Bafg%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:22:07 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-2d5669d5
+      - i-551d61c6
       X-Circleci-Request-Id:
-      - 1129b2d1-7022-4343-acb4-0d8d0afd18ce
+      - 9d001d03-5057-4090-bf9a-bd5e536bb785
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -52,19 +102,18 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '1083'
+      - '934'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":139,"status":"success","build_time_millis":83094},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
-        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
-        old functionality","usage_queued_at":"2016-07-25T17:03:26.930Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/140","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"github","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":140,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","retries":[150,156,149,147,151,155,154,153,148,152,162,157,160,166,164,158,165,169,163,168,159,161,171,175,176,174,170,167,172,173,178,177,183,184,185,186,190,189,194,193,226,225,287,288,289,290],"subject":"Project#envvar
-        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T17:07:31.761Z","ssh_disabled":false,"build_time_millis":223674,"circle_yml":{"string":"machine:\n  ruby:\n    version:
-        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T17:03:48.087Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
-        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
-        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
-        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.191.221.156","port":64561,"username":"ubuntu","image_id":"s3://lxc-images-us-west-2/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T17:03:48.067Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
+      string: '{"compare":null,"previous_successful_build":null,"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","usage_queued_at":"2017-01-18T18:37:37.619Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/modolabs/circleci/1","parallel":1,"failed":null,"branch":"master","username":"modolabs","author_date":"2016-10-01T04:15:11Z","why":"first-build","user":{"is_user":true,"login":"eebs","avatar_url":"https://avatars.githubusercontent.com/u/597311?v=3","name":"Ebrahim
+        Kobeissi","vcs_type":"github","id":597311},"vcs_revision":"17689466091d0399bf86751d5a560179f0758a8b","vcs_tag":null,"build_num":1,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","retries":[8,7],"subject":"Update
+        to version 1.0.3","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2017-01-18T18:35:08.119Z","ssh_disabled":false,"build_time_millis":121179,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":true,"job_name":null,"start_time":"2017-01-18T18:33:06.940Z","canceler":null,"all_commit_details":[{"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","author_date":"2016-10-01T04:15:11Z","committer_email":"matthew@el-chavez.me","commit":"17689466091d0399bf86751d5a560179f0758a8b","committer_login":"mtchavez","committer_name":"Chavez","subject":"Update
+        to version 1.0.3","commit_url":"https://github.com/modolabs/circleci/commit/17689466091d0399bf86751d5a560179f0758a8b","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/modolabs/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.146.14.88","port":64535,"username":"ubuntu","image_id":"https://s3.amazonaws.com/circle-downloads/build-image-ubuntu-14.04-XXL-927-41cd8fe.tar.gz","ssh_enabled":null}],"queued_at":"2017-01-18T18:33:06.886Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 20:38:27 GMT
+  recorded_at: Wed, 18 Jan 2017 21:46:44 GMT
 recorded_with: VCR 3.0.3

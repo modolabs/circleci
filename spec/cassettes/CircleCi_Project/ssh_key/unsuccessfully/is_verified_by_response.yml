@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/ssh-key?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/ssh-key?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: '{"hostname":"hostname","private_key":"RSA Private Key"}'
@@ -25,16 +25,16 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 23:53:38 GMT
+      - Wed, 18 Jan 2017 21:31:08 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=BoyINT8YmpNChXruWTvXe2KcjHVdSiJBBRGPdpr42qCbvu2LfzOsJSIzVdByYIw33FmE9GnRB%2BbLAsracxQ8Lbwu%2BA6bfgPXwbGHSU0JKyhGqUxU4fYiYpgCbGuTor8h9dH%2Bp37wO5OD2T9XPk0OVP%2FRPF1HfKPt%2FDG9rV9ybb2O831dhJ2r90YVPXHOlEOVrCWoJtOMT6I5JAo88v9WJxa%2FnCVwNebyNsLVh4pwdHg%3D--oJlAQ%2BA0vJOwlr476BQwXQZt6bpb4QsHGwlniKsjdmM%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 23:05:07 +0000;Max-Age=31536000;Secure
+      - ring-session=0hTqtBVrRtvfQWAnH57xF5Bg9Y7lrODsfkUAOT1oFqdS%2BBRHSQ9jDQLxsg9M%2BXSuOCjmuQ%2BlrwzAZOyYA8%2FFhh1nPTsbVJhCx4PVnsBVp2Vwk%2Bn6a8A6YR%2Fcp4J0SS51l3EhcDpk%2BUUb38HbiDiwYUlepLfxsTZm05UjmSmniZ4uhwlm%2Bw6JTDfNPoJnQiD1ENoJ1WL9q%2FY6nXD2eN93wBMXEAURkFGf92SVTIZoFeY%3D--KxUU6XNES89bP8FSRV2%2F%2FafsowY8BrW%2FZA2ZONd%2FYVI%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:13:47 +0000;Max-Age=31536000;Secure
       X-Circleci-Identity:
-      - i-29422c27
+      - i-8a576872
       X-Circleci-Request-Id:
-      - b238b3b5-5fb1-43d1-badd-01c89b47556b
+      - 2e2fb7a5-476e-4f99-88ac-8045deac4ea1
       X-Frame-Options:
       - DENY
       X-Route:
@@ -47,5 +47,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message":"it looks like private key is invalid key.  Double check"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 23:53:49 GMT
+  recorded_at: Wed, 18 Jan 2017 21:31:33 GMT
 recorded_with: VCR 3.0.3

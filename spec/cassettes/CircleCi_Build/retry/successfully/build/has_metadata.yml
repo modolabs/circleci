@@ -2,7 +2,46 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/retry?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/140/retry?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 18 Jan 2017 21:34:47 GMT
+      Server:
+      - nginx
+      X-Circleci-Request-Id:
+      - f1e3e2c1-a6bd-4c4b-8a95-a7980cf17800
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"An internal server error occurred."}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 21:31:26 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/1/retry?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,18 +64,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 20:28:45 GMT
+      - Wed, 18 Jan 2017 21:44:15 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=Gm8RF7mcyatiRoIRPcR98xlH%2BkGXG5bsJHT2KIxY5ZN3C3i%2F5agDNxItCNC90lobbcMKUUgBJ3iESNt7v1TNEHGwB3eZIimrxKrSCle%2Fz6670E8lalWaI7j4GcdAr9AveTu1J%2BrVL%2FX%2B%2BlEtHSgXYvxqNrMxsXTHZmtDcA6DtEItTn%2BWo3muBy4hPc8XH0i9HETzVUQJ5LXy54In8ZIiRC87xKtYkVYKVhF3sRBvTIg%3D--F%2Bau%2B%2Fz%2Byf9u2CYD%2Bh3IQHVL3HGLXPfaOjars0lNjSM%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 19:17:42 +0000;Max-Age=31536000;Secure
+      - ring-session=72ikKVN3HxnKMR5TVv1LVSuergSWhMXSK4mEajOQWny8HFSL%2F929pvv1tAJpExs6WuOMc%2BVgOm2cYUo8ybRMCWd2a4gUE4FOOZuoKtRr8qm%2Ftv72REZdgZjKbZmIXF%2F4bOLQrcQ1ybqlzD7YhW5VBQfn9vEIYdfoCgUTnhkTNvw5Y4vJENBzsBtaf10ks6%2B%2BXOrcskg%2F%2BY15ULBweLTrVvdszk4LRzklsOxXZ1y0P1Y%3D--M5sVOIh4eVDzPcYgNpZgJPw3xIzFtD3FoSWfI1tOPkU%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:17:11 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-d796d444
+      - i-0896f49b
       X-Circleci-Request-Id:
-      - 4e456259-953c-4b17-9ea6-442a6af466f4
+      - bb448a7f-0ab7-461b-86d9-6b5edf9e6ca4
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -52,18 +91,17 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '811'
+      - '755'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"compare":"https://github.com/mtchavez/circleci/commit/d9a5a207e102","previous_successful_build":{"build_num":227,"status":"success","build_time_millis":58369},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:03:49-07:00","body":"*
-        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
-        old functionality","usage_queued_at":"2016-12-20T20:28:45.591Z","fail_reason":null,"retry_of":140,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/290","parallel":1,"failed":null,"branch":"typo","username":"mtchavez","author_date":"2016-07-25T10:03:49-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"d9a5a207e10209eecef8ed02289824a8630ed67d","vcs_tag":null,"build_num":290,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":140,"status":"success","build_time_millis":223674},"status":"scheduled","committer_name":"Chavez","retries":null,"subject":"Project#envvar
-        method naming fix","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"scheduled","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:03:49-07:00","body":"*
-        Fix from plural envvar to envvars for consistency with API endpoint\n* Preserve
-        old functionality","branch":"typo","author_date":"2016-07-25T10:03:49-07:00","committer_email":"matthew@el-chavez.me","commit":"d9a5a207e10209eecef8ed02289824a8630ed67d","committer_login":"mtchavez","committer_name":"Chavez","subject":"Project#envvar
-        method naming fix","commit_url":"https://github.com/mtchavez/circleci/commit/d9a5a207e10209eecef8ed02289824a8630ed67d","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
+      string: '{"compare":null,"previous_successful_build":{"build_num":1,"status":"success","build_time_millis":121179},"build_parameters":null,"oss":true,"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","usage_queued_at":"2017-01-18T21:44:15.212Z","fail_reason":null,"retry_of":1,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/modolabs/circleci/8","parallel":1,"failed":null,"branch":"master","username":"modolabs","author_date":"2016-10-01T04:15:11Z","why":"retry","user":{"is_user":true,"login":"eebs","avatar_url":"https://avatars.githubusercontent.com/u/597311?v=3","name":"Ebrahim
+        Kobeissi","vcs_type":"github","id":597311},"vcs_revision":"17689466091d0399bf86751d5a560179f0758a8b","vcs_tag":null,"build_num":8,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","previous":{"build_num":1,"status":"success","build_time_millis":121179},"status":"scheduled","committer_name":"Chavez","retries":null,"subject":"Update
+        to version 1.0.3","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"scheduled","no_dependency_cache":false,"stop_time":null,"ssh_disabled":false,"build_time_millis":null,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":null,"canceler":null,"all_commit_details":[{"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","author_date":"2016-10-01T04:15:11Z","committer_email":"matthew@el-chavez.me","commit":"17689466091d0399bf86751d5a560179f0758a8b","committer_login":"mtchavez","committer_name":"Chavez","subject":"Update
+        to version 1.0.3","commit_url":"https://github.com/modolabs/circleci/commit/17689466091d0399bf86751d5a560179f0758a8b","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":null,"vcs_url":"https://github.com/modolabs/circleci","author_name":"Chavez","node":null,"canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 20:29:10 GMT
+  recorded_at: Wed, 18 Jan 2017 21:46:43 GMT
 recorded_with: VCR 3.0.3

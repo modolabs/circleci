@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/build-cache?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/build-cache?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,18 +25,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 23:31:18 GMT
+      - Wed, 18 Jan 2017 21:33:51 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=3QJIDLGZhwJIvMZtqPqVme%2B5nlMBLB3qNqEiDLYE2FMum7M%2BuOhlTkIw1OJXS0mNy7D%2FD%2F9sefjmTegCg390KuuPwRVpSwyPlnWJi48KR3SSRzPer2BLE3i8rTUFDllWvxTEsAlZuH%2Fke3F5RThec1s%2FA3Dr8cK9ccJK4i1IoD9BQXuY%2F0AqP1sXLJZ2V7m2a931kGqdeJbrrLT07sTbaOJ5pqEyTu%2FJAn4tY%2BJYdpc%3D--jDLompThqngnXXyOmC3Y4XB%2BQiQ3SQmltkPUWdArP4k%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 23:04:03 +0000;Max-Age=31536000;Secure
+      - ring-session=cW0yIk6Kk%2BxWt6pjdwxBoviIy1TwjwAOc6IomMtyIRwJTCRwPkMWh506lhboLJmofSaBEhB%2FBpTwG8ywxHeedxUl0bcb8nRX%2F59zQFjESaMOEYXli0f%2BzZBvIgLQ%2FXHyrMnYuf4P%2Bfjz%2BfA%2FFNofNTxKrnhEJumVSkk%2FFZRG%2B1wB5l7Pe82oAecjn4RuVqnIELoWpwZi7R%2BeHnk3nAak7sf6FZFv7OGLjJ9uRmvnCWU%3D--5fS9P7PIANOCHMDSARFvP3ge0wmI3bvNwPe32kzxAW8%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:19:21 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-195669e1
+      - i-eaf27fe4
       X-Circleci-Request-Id:
-      - 08806a5c-926b-458f-ad3a-ad04c5710328
+      - f791d4d1-169d-422f-bcfb-a80368856069
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -57,5 +57,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":"build dependency caches deleted"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 23:31:45 GMT
+  recorded_at: Wed, 18 Jan 2017 21:31:29 GMT
 recorded_with: VCR 3.0.3

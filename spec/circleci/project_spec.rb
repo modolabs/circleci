@@ -2,13 +2,14 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::Project, :vcr do
-  let(:project) { described_class.new 'github', 'mtchavez', 'circleci' }
+  let(:project) { described_class.new :github, 'modolabs', 'circleci' }
 
+  # TODO: `all` requires user API token. Look into providing test token for repo
   xdescribe 'all' do
     context 'successfully' do
       let(:res) { described_class.all }
 
-      xit 'is verified by response' do
+      it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
         expect(res).to be_success
       end
@@ -64,7 +65,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
     context 'with build parameters' do
       let(:params) { { 'ABC' => '123'} }
-      let(:res) { project.build 'master', 'build_parameters' => params }
+      let(:res) { project.build 'master', nil, params }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)
@@ -191,7 +192,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'are returned' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 2
+          expect(subject.size).to eql 1
         end
 
         context 'first key' do
@@ -264,7 +265,6 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'are returned in a list' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 30
         end
 
         describe 'first project' do
@@ -328,7 +328,6 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'are returned in a list' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 30
         end
 
         describe 'first project' do
@@ -476,7 +475,6 @@ RSpec.describe CircleCi::Project, :vcr do
 
         it 'has list' do
           expect(subject).to be_instance_of(Array)
-          expect(subject.size).to eql 2
         end
 
         context 'first envvar' do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 def test_checkout_key_fingerprint
-  '3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05'
+  'fd:f7:03:05:1c:ac:62:f4:fd:32:fa:0f:f9:cc:de:98'
 end
 
 def test_delete_checkout_key_fingerprint

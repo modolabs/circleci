@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 Gem::Specification.new do |s|
   s.name                  = 'circleci'
-  s.version               = '1.0.3'
+  s.version               = '1.1.0'
   s.date                  = '2016-09-30'
   s.summary               = 'Circle CI REST API gem'
   s.description           = 'Ruby gem for Circle CI REST API'
   s.licenses              = %w[MIT]
   s.authors               = %w[Chavez Modolabs]
-  s.email                 = 'gem@modolabs.com'
+  s.email                 = 'product-dev@modolabs.com'
   s.files                 = Dir.glob('{bin,lib}/**/*') + %w[README.md]
   s.require_paths         = %w[lib]
   s.homepage              = 'http://github.com/modolabs/circleci'
@@ -16,6 +16,9 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0.0'
   # s.cert_chain            =
   # s.signing_key           =
+
+  # Dependencies
+  s.add_dependency             'immutable-struct', '~> 2.2.2', '>= 2.2.2'
 
   # Dev Dependencies
   s.add_development_dependency 'coveralls',        '~> 0.8.14', '>= 0.8.14'
@@ -31,5 +34,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'vcr',              '~> 3.0.3', '>= 3.0.3'
   s.add_development_dependency 'webmock',          '~> 2.1.0', '>= 2.1.0'
   s.add_development_dependency 'yard',             '~> 0.9.5', '>= 0.9.5'
-  s.add_dependency             'immutable-struct', '~> 2.2.2', '>= 2.2.2'
 end

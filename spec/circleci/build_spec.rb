@@ -2,10 +2,10 @@
 require 'spec_helper'
 
 RSpec.describe CircleCi::Build, :vcr do
+  let(:project) { CircleCi::Project.new :github, 'modolabs', 'circleci' }
   describe 'artifacts' do
     context 'successfully' do
-      let(:project) { CircleCi::Project.new :github, 'mtchavez', 'circleci' }
-      let(:build) { described_class.new(project, 140) }
+      let(:build) { described_class.new(project, 1) }
       let(:res) { build.artifacts }
 
       it 'is verified by response' do
@@ -38,8 +38,7 @@ RSpec.describe CircleCi::Build, :vcr do
 
   describe 'cancel' do
     context 'successfully' do
-      let(:project) { CircleCi::Project.new :github, 'mtchavez', 'circleci' }
-      let(:build) { described_class.new(project, 145) }
+      let(:build) { described_class.new(project, 2) }
       let(:res) { build.cancel }
 
       it 'is verified by response' do
@@ -62,8 +61,7 @@ RSpec.describe CircleCi::Build, :vcr do
 
   describe 'get' do
     context 'successfully' do
-      let(:project) { CircleCi::Project.new :github, 'mtchavez', 'circleci' }
-      let(:build) { described_class.new(project, 140) }
+      let(:build) { described_class.new(project, 1) }
       let(:res) { build.get }
 
       it 'is verified by response' do
@@ -90,8 +88,7 @@ RSpec.describe CircleCi::Build, :vcr do
 
   describe 'retry' do
     context 'successfully' do
-      let(:project) { CircleCi::Project.new :github, 'mtchavez', 'circleci' }
-      let(:build) { described_class.new(project, 140) }
+      let(:build) { described_class.new(project, 1) }
       let(:res) { build.retry }
 
       it 'is verified by response' do
@@ -118,8 +115,7 @@ RSpec.describe CircleCi::Build, :vcr do
 
   describe 'ssh_users' do
     context 'successfully' do
-      let(:project) { CircleCi::Project.new :github, 'mtchavez', 'circleci' }
-      let(:build) { described_class.new(project, 140) }
+      let(:build) { described_class.new(project, 1) }
       let(:res) { build.ssh_users }
 
       it 'is verified by response' do

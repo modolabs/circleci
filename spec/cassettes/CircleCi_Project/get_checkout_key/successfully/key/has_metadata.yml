@@ -2,7 +2,57 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/checkout-key/3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/checkout-key/3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Jan 2017 22:18:38 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=veo1SuktxOVg%2FHsPoe2tuTWnHqkl8Obbfu49wFWKJLOBudUOXRuC%2BcYT8A0f1ngoYIZOaWcZhsDvigBBA6tN%2FWmu21E4VFTO4l8BD92TSSLktmjEFzBSDxXKzm70M3pbiz0N6KTyH8pmcqSRUpvl20ytTzinxmv%2FVL%2F6QbnQ9vtLUsnRI6LZThzlvJpi3NKbY0klEDiKl49Hol8HLLo%2FvmQ5H73nD1l7QjepwEqsWEs%3D--xg%2BUZT3c8kYFWtXXqPRPvW%2FwrUYcH6ncP2ComXHIq0Q%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:15:10 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-d796d444
+      X-Circleci-Request-Id:
+      - 7e31f178-14bd-4632-bff0-84c5823653df
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/checkout-key/:fingerprint"
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"checkout key not found"}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 22:19:18 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/checkout-key/fd:f7:03:05:1c:ac:62:f4:fd:32:fa:0f:f9:cc:de:98?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,18 +77,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 23:31:46 GMT
+      - Wed, 18 Jan 2017 22:30:52 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=ablXqIYf3HSWL%2BgBfzt4WD%2BRBn2dLvRddp%2FuDQP4ppdKkghtNl2R7U%2FL7r79K40nKQMrlXdMGpbNTvYQdyMyfTpQsRlUZ7S1shVfIoe6b7e%2Bv1eCkj1hYwhtTESrqD%2F5KqupJ0jJgnJ3LqEZ8f3XU%2FrAFYOFSRgfWPFGZ0jin8fcenAvFTie%2BMhyPfS1aeCcyIrU1%2B9w6bZE80n22YBBKr8p%2F6oMQeMDvVQbe%2F4OMxg%3D--KuIPBoB%2Bl%2FEqiIHCkJ3VewgA94WH%2FcgKdQe9WMrxfzg%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 23:09:34 +0000;Max-Age=31536000;Secure
+      - ring-session=YxncQ2n1z4FrUH%2FZBypGKC37gRtNeNP76XLrD2NTdpvXQZl%2BVt9jdhdmNASz0ojt29lENAHXQ5KuijgA51AlGNcV7OEJreIa%2FeosMCk89S82oywVKXp%2FDuIeApYdz7ss3RTe7VHqbG%2BJyjD39HSZLWWEnlScyUQreMIdZfAix35j1qLIW1QUQRJbo2mgxNxC7H23%2BjVMY00fzd3CMMIqvCoroH9KHGYswBVPZP1OEM8%3D--0QQKlkRX5cR%2BORTH17EGbcrGcxbQcUcPFbC3bmjnXQo%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:19:31 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-7656698e
+      - i-8b486412
       X-Circleci-Request-Id:
-      - 9ad1295d-8313-4345-97c1-686d137f14f9
+      - a09807a6-5f8a-4fa0-888b-8fdff9d53e86
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -52,13 +102,13 @@ http_interactions:
       X-Route:
       - "/checkout-key/:fingerprint"
       Content-Length:
-      - '475'
+      - '474'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCKLz/1WWYe+rWooGGwkmm7P19KKIe8hYbJDdc+hLlbyW/kx0geT5iWjb/4e+kCrFBw4K2qq2ScqUX9/Spo+AzYcDSGbB0fmKhRcq2aPVJZsWgoRa7iZ1FNV32EZSxMxIxpGzZb3gmslXVRaP7fQWsOaydRr31ETJgX3pE1rI8LPT8rYsG3et4398UGcfXJ22FQgrKtr/mPi8gRR+T7AXOoaM1HtBash3SvyjBKvm/WSdhdABK0Y9G1q5iu92ulh0Vo/ia+Kt952Vi1nQf2/PxIquqdOVa6G1RpLDmpx2MN8PN7lnXl0g8FnSwnNj+dRaAuenTdgBqQIhcAEY4io6Nf
-        \n","type":"deploy-key","fingerprint":"3e:35:e0:96:f7:c8:23:9c:b8:2f:50:9e:d0:16:f7:05","login":null,"preferred":false,"time":"2016-07-29T00:28:24.797Z"}'
+      string: '{"public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClhbkk3/K7qiBwfpCQxCh0zmA9ehK+HDx5GWw7ecMZbVPWZAsbcky5UFPmb2NvONVSKDWWgf+RHObs7yq40ZUKiET1m+P6spAkvPcnlNN1ZztP7FE8/IotC4io8/xBgqf5/50LSc6m8JzHo7TGaO/+R5Zj6B2a8JCCU4pebW3sIvRzDy9M9c8hRmVqQRq7VqW/4Q1/Zab6SXs5P0OL4Kd4lmXJsWztXmwuaAeUwoIeK1OsWlDNfhnIQs+PqnFL7qqCLDYjxeKHILwFRcqX919B3sqqyu0UZzOkK8pGdHyWyyCiOH980/VeFP04nla2ik2w6CiNJpTZcdVwEHTlBTbt
+        \n","type":"deploy-key","fingerprint":"fd:f7:03:05:1c:ac:62:f4:fd:32:fa:0f:f9:cc:de:98","login":null,"preferred":true,"time":"2017-01-18T18:37:36.878Z"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 23:31:45 GMT
+  recorded_at: Wed, 18 Jan 2017 22:33:53 GMT
 recorded_with: VCR 3.0.3

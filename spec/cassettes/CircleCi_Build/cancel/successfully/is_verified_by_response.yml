@@ -2,7 +2,57 @@
 http_interactions:
 - request:
     method: post
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/145/cancel?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/145/cancel?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Jan 2017 21:32:10 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=pesSsCDk1ud%2BtX9eJaV8avMp7kMDD4FcZg2Lxkn%2Bf2U%2FjjTSAS8Qjou2nZho8VpNbQzHU61849D%2Bs3QZkwV2OsBKvIcAsMDP9av29wpcPzyxMY7rZK3%2BVTfJM4RAVLNePX%2BBncUdV%2FRqSZigDmpUOyXI9AzlceVIiiFaI9OPRV4k5%2FG5e3qnETPgyIpXEE0v4b0Atz3GdfmgPJZS6HodlUjOV7KAdGeEKvXMHqmJJro%3D--1FFA%2FsoFke3OhRm4geGL%2BVDVyuby7Cs%2FbbCANd7X6FM%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:20:36 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-1e214d10
+      X-Circleci-Request-Id:
+      - 09f955e5-c4f5-42dc-8cc8-37808a4e527f
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/cancel"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '29'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Build not found"}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 21:31:25 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/1/cancel?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -25,18 +75,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 20:30:42 GMT
+      - Wed, 18 Jan 2017 21:50:17 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=2%2BbjUlX4RokPktNMygMH4gelo8G0MpRC%2F8imxb1A4xB2FpyvxXv6aMXT9W6OSnLxUDL2WEEmCpjuPQ4RYeToNoDDQrfQdZHKenUcJjQiBQ58vXvBWMv5eiycFI74Jx4t9MDsxBSo3sOhCP4HtnsoC2ReQFrEiMCp3Tf4%2FQrGpU8c9F6xwhVz005twrclqFU3EKSGxMGIYYHyBaIERYOiX%2BdknhvL1X7khNGQ5XIp3Ec%3D--f5rHjiHjDiunAcQuYXmURRfcvCG%2FaLNGeRk3KOtaTzs%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 19:56:52 +0000;Max-Age=31536000;Secure
+      - ring-session=QXPbbs5WDqceMAOEv21SGo921OjzNOmhGRGEqiEHRzVDwdPUzFFhkd9opOnVYAhpXcLv7mjcpnIxr2nYz8dMg9J6MnUctDrv9PF3crMO1wnw0U4h0o6KRmNhlPus3Us4SyV8fUVFL5EkeEtbAPIjx06aN5HPAxiKgkjWfrysWukCso7jI5pd9nXg%2B6P4M9wqjjhLUojrdjvxegQY868bZhka%2FA7zeaFuUhVT1Wxy7T4%3D--T5BZEaZfH3N5woVdaZOjiCklVE5sBXisL2Mc4kgsqqk%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:20:33 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-80d9a413
+      - i-47bbd9d4
       X-Circleci-Request-Id:
-      - 5ece4f8f-5523-4335-a8bb-3c6dd5a86d2c
+      - 6c01975d-7568-435c-a256-4b5e32ddaa1d
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -52,19 +102,85 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '972'
+      - '929'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"compare":"https://github.com/mtchavez/circleci/compare/ab5ffefdcfbf...cc1e87745e2f","previous_successful_build":{"build_num":144,"status":"success","build_time_millis":73455},"build_parameters":null,"oss":true,"committer_date":"2016-07-25T10:23:21-07:00","body":"*
-        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
-        hash code styling issue","usage_queued_at":"2016-07-25T18:26:14.920Z","fail_reason":null,"retry_of":144,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/mtchavez/circleci/145","parallel":1,"failed":null,"branch":"master","username":"mtchavez","author_date":"2016-07-25T10:23:21-07:00","why":"retry","user":{"is_user":true,"login":"mtchavez","avatar_url":"https://avatars.githubusercontent.com/u/44689?v=3","name":"Chavez","vcs_type":"github","id":44689},"vcs_revision":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","vcs_tag":null,"build_num":145,"infrastructure_fail":false,"committer_email":"noreply@github.com","previous":{"build_num":144,"status":"success","build_time_millis":73455},"status":"canceled","committer_name":"GitHub","retries":[146],"subject":"Dev
-        dependencies (#72)","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2016-07-25T18:27:07.919Z","ssh_disabled":false,"build_time_millis":45670,"circle_yml":{"string":"machine:\n  ruby:\n    version:
-        2.2.3\n"},"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2016-07-25T18:26:22.249Z","canceler":null,"all_commit_details":[{"committer_date":"2016-07-25T10:23:21-07:00","body":"*
-        Update dev dependencies\r\n\r\n* Remove deprecated rubocop cop\r\n\r\n* Fix
-        hash code styling issue","branch":"master","author_date":"2016-07-25T10:23:21-07:00","committer_email":"noreply@github.com","commit":"cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","committer_login":"web-flow","committer_name":"GitHub","subject":"Dev
-        dependencies (#72)","commit_url":"https://github.com/mtchavez/circleci/commit/cc1e87745e2ffcf5d20dec47c4bcf3dd5ebc3f56","author_login":"mtchavez","author_name":"Chavez","author_email":"mtchavez@users.noreply.github.com"}],"outcome":"canceled","vcs_url":"https://github.com/mtchavez/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.198.218.117","port":64628,"username":"ubuntu","image_id":"s3://lxc-images/circletar-1741-cc586-20160424T232626Z","ssh_enabled":null}],"queued_at":"2016-07-25T18:26:22.224Z","canceled":true,"author_email":"mtchavez@users.noreply.github.com"}'
+      string: '{"compare":null,"previous_successful_build":null,"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","usage_queued_at":"2017-01-18T18:37:37.619Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/modolabs/circleci/1","parallel":1,"failed":null,"branch":"master","username":"modolabs","author_date":"2016-10-01T04:15:11Z","why":"first-build","user":{"is_user":true,"login":"eebs","avatar_url":"https://avatars.githubusercontent.com/u/597311?v=3","name":"Ebrahim
+        Kobeissi","vcs_type":"github","id":597311},"vcs_revision":"17689466091d0399bf86751d5a560179f0758a8b","vcs_tag":null,"build_num":1,"infrastructure_fail":false,"committer_email":"matthew@el-chavez.me","has_artifacts":true,"previous":null,"status":"success","committer_name":"Chavez","retries":null,"subject":"Update
+        to version 1.0.3","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2017-01-18T18:35:08.119Z","ssh_disabled":false,"build_time_millis":121179,"circle_yml":{"string":"machine:\n  ruby:\n    version:
+        2.2.3\n"},"messages":[],"is_first_green_build":true,"job_name":null,"start_time":"2017-01-18T18:33:06.940Z","canceler":null,"all_commit_details":[{"committer_date":"2016-10-01T04:15:11Z","body":"-
+        Fix require of forwardable issue","author_date":"2016-10-01T04:15:11Z","committer_email":"matthew@el-chavez.me","commit":"17689466091d0399bf86751d5a560179f0758a8b","committer_login":"mtchavez","committer_name":"Chavez","subject":"Update
+        to version 1.0.3","commit_url":"https://github.com/modolabs/circleci/commit/17689466091d0399bf86751d5a560179f0758a8b","author_login":"mtchavez","author_name":"Chavez","author_email":"matthew@el-chavez.me"}],"outcome":"success","vcs_url":"https://github.com/modolabs/circleci","author_name":"Chavez","node":[{"public_ip_addr":"54.146.14.88","port":64535,"username":"ubuntu","image_id":"https://s3.amazonaws.com/circle-downloads/build-image-ubuntu-14.04-XXL-927-41cd8fe.tar.gz","ssh_enabled":null}],"queued_at":"2017-01-18T18:33:06.886Z","canceled":false,"author_email":"matthew@el-chavez.me"}'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 20:29:08 GMT
+  recorded_at: Wed, 18 Jan 2017 21:46:41 GMT
+- request:
+    method: post
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/2/cancel?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Jan 2017 22:50:22 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=2upG1aahVlMAAXv6%2FG7dSl42kZv9Qx5XQCLQWRmW9tthTp5Zmc6Zq1K97HsuIN3ckv2XP%2FY%2B1RiMsCiACSKhqdlDMAzYEohTdpMi%2B%2FM5ExquW6j9efAfBEbT%2F8bFRcvOwDMh5lmVtPlZIIFngUsuW%2BWliQTTDafFZTDr2WRk4Rue8LkYapMBdSNhoYbSayc9a6DxKDix4bDujLf5c%2FteIVi9XInDWogNqFKsMC%2BpQ%2Fk%3D--kuEYFesY40s9srAyvG4xpVmigYuUUAJ8MRRPy4zm%2BFc%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:25:10 +0000;Max-Age=31536000;Secure
+      Strict-Transport-Security:
+      - max-age=15724800
+      X-Circleci-Identity:
+      - i-a8bbd93b
+      X-Circleci-Request-Id:
+      - 604b2872-92f5-4bdc-a7f0-fec17aeaa3d6
+      X-Circleci-Scopes:
+      - ":all"
+      - ":none"
+      - ":read-settings"
+      - ":status"
+      - ":trigger-builds"
+      - ":view-builds"
+      - ":write-settings"
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/cancel"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '959'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"compare":"https://github.com/modolabs/circleci/compare/7a61e2f0d4a2...7a6809e12f8d","previous_successful_build":{"build_num":1,"status":"success","build_time_millis":121179},"build_parameters":null,"oss":true,"all_commit_details_truncated":false,"committer_date":"2017-01-18T16:23:23-05:00","body":"","usage_queued_at":"2017-01-18T21:23:22.511Z","fail_reason":null,"retry_of":null,"reponame":"circleci","ssh_users":[],"build_url":"https://circleci.com/gh/modolabs/circleci/2","parallel":1,"failed":null,"branch":"feature/api-v1.1","username":"modolabs","author_date":"2017-01-18T16:23:23-05:00","why":"github","user":{"is_user":true,"login":"atreat","avatar_url":"https://avatars.githubusercontent.com/u/1031555?v=3","name":"Austin
+        Treat Emmons","vcs_type":"github","id":1031555},"vcs_revision":"7a6809e12f8d5cb0a1ce03dcce7923f2d434208a","vcs_tag":null,"build_num":2,"infrastructure_fail":false,"committer_email":"austin.emmons@modolabs.com","previous":null,"status":"canceled","committer_name":"Austin
+        Emmons","retries":null,"subject":"Updates CircleCi::Project#build to merge
+        params and build env if params already contains `build_parameters` key.","vcs_type":"github","timedout":false,"dont_build":null,"lifecycle":"finished","no_dependency_cache":false,"stop_time":"2017-01-18T21:24:43.395Z","ssh_disabled":false,"build_time_millis":24241,"circle_yml":null,"messages":[],"is_first_green_build":false,"job_name":null,"start_time":"2017-01-18T21:24:19.154Z","canceler":null,"all_commit_details":[{"committer_date":"2017-01-18T16:23:23-05:00","body":"","branch":"api-v1.1","author_date":"2017-01-18T16:23:23-05:00","committer_email":"austin.emmons@modolabs.com","commit":"7a6809e12f8d5cb0a1ce03dcce7923f2d434208a","committer_login":"atreat","committer_name":"Austin
+        Emmons","subject":"Updates CircleCi::Project#build to merge params and build
+        env if params already contains `build_parameters` key.","commit_url":"https://github.com/modolabs/circleci/commit/7a6809e12f8d5cb0a1ce03dcce7923f2d434208a","author_login":"atreat","author_name":"Austin
+        Emmons","author_email":"austin.emmons@modolabs.com"}],"outcome":"canceled","vcs_url":"https://github.com/modolabs/circleci","author_name":"Austin
+        Emmons","node":[{"public_ip_addr":"54.198.171.223","port":64574,"username":"ubuntu","image_id":"https://s3.amazonaws.com/circle-downloads/build-image-ubuntu-14.04-XXL-927-41cd8fe.tar.gz","ssh_enabled":null}],"queued_at":"2017-01-18T21:24:18.942Z","canceled":true,"author_email":"austin.emmons@modolabs.com"}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 22:47:45 GMT
 recorded_with: VCR 3.0.3

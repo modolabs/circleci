@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/envvar?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/envvar?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,18 +27,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 13 Jan 2017 15:48:28 GMT
+      - Wed, 18 Jan 2017 21:30:51 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=qdFMbqksyNGD482wTbvdXQfnzTZej98H%2FsYaH9AVJ6KW2ZuqR%2Bu5IVJ1zbd2gsbeVHJUhUMcU9xkJrydkYRpK6yj0xPgcxiRMjnB%2BfwqqNA3XHuzcWze97iNKoSXJ9J9%2B7503csOPSjw%2BpbJpQB1NOA5YN0yZq39xald3q0D8hRON68TumtubtMKbljyDclWrvhzZwaef6hBq6Els4AGvOD5smrMogsO1jb1iytaODA%3D--CRZtLP5YGXJsHwBvXMMTs%2B7rUhEsdXesPyjIOjtKwSg%3D;Path=/;HttpOnly;Expires=Sat,
-        13 Jan 2018 09:25:14 +0000;Max-Age=31536000;Secure
+      - ring-session=LSO6H%2BE%2Fy8%2BD%2FquAc97LPCQvtFfPEl4tCmh09qQ0g%2FQD%2B78wqc9ooCe10YY8gTpeAVoXk9rrK%2BYhFzcfVr3KkLJwAVmkNlzjZXZIA0UF5fWMdijqkuzBU9MfrEZ2XL4A2HHmdc11s91vAo0lImdAirWw085pmPaRIGlsCkSiL8ZF2o08NGwgAcYi4FUvd%2Fwss%2BykiIrUOLzPpNqkP%2FGAJHd4Z%2FPwXbAVKRe%2BycuIi6U%3D--4pJkwaWU2PtBoodW2JpObB%2BuGxCU9jnrAZcGYkJ%2FbqM%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:13:42 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-8abbd919
+      - i-195669e1
       X-Circleci-Request-Id:
-      - 4eed0296-abfc-4058-a8c9-3d9c6b0fb15e
+      - 72bb1846-d8b2-4dc0-9bbe-f2558f237dd2
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -52,12 +52,12 @@ http_interactions:
       X-Route:
       - "/envvar"
       Content-Length:
-      - '90'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"name":"COVERALLS_REPO_TOKEN","value":"xxxxskJS"},{"name":"TESTENV","value":"xxxxalue"}]'
+      string: "[]"
     http_version: 
-  recorded_at: Fri, 13 Jan 2017 15:49:37 GMT
+  recorded_at: Wed, 18 Jan 2017 21:31:34 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,59 @@
 http_interactions:
 - request:
     method: get
-    uri: https://circleci.com/api/v1.1/project/github/mtchavez/circleci/140/artifacts?circle-token=<TOKEN>
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/140/artifacts?circle-token=<TOKEN>
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Host:
+      - circleci.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 18 Jan 2017 21:33:34 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - ring-session=en6ptRO1WAhDsLZFlNI8I2s2FMli61BRu5CZbXK6JbuD8Re%2BJq4AQki4YWAVyQhgVDlkvwt%2Boc8Atje%2FUOV9TsDQxfEqpCV04wzioROLg9IqBPINf8N1V7p73ggxFqTC7LhLUdWhvsWpOkgh1h1swXFaGm9MCPmNbABXo3fyjsNFmGXojkHuiTkeCK5hunmNOsyWy5eLxNsB6%2Bnz0YJGLjGCc0WrEkRprqnwf1Mr3t0%3D--tJbcbMuAaVfGmjYZjSJUjCmdQO%2BYf3kDku6QOM42DMA%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:23:08 +0000;Max-Age=31536000;Secure
+      X-Circleci-Identity:
+      - i-babad829
+      X-Circleci-Request-Id:
+      - 6b95d80a-edb4-4cec-8b46-2e48966e9197
+      X-Frame-Options:
+      - DENY
+      X-Route:
+      - "/artifacts"
+      - ":build_num"
+      - "\\d+"
+      Content-Length:
+      - '29'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"Build not found"}'
+    http_version: 
+  recorded_at: Wed, 18 Jan 2017 21:31:25 GMT
+- request:
+    method: get
+    uri: https://circleci.com/api/v1.1/project/github/modolabs/circleci/1/artifacts?circle-token=<TOKEN>
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,18 +79,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 20 Dec 2016 20:30:24 GMT
+      - Wed, 18 Jan 2017 21:45:20 GMT
       Server:
       - nginx
       Set-Cookie:
-      - ring-session=PfonibmRxEo2sO7nmxmSRmSFBnFVrc2wei%2Bmr6vaHOk%2FJes7PUKWInEoZDR2%2BxtGXaek8gNudNze5NtwSimhumJiIqlUweh0WEstHXv7G5G557lSGRjHb1ftUbIqLdagaf3ySGPAT6fpWqayrSBRBeqfLX8%2F7vJP0BSgej3zdutVZcQ5HnIhlAFo7gpBCuQgQDcYUeUYFmMkouvYfRSUm8sh%2B2KkxA7DaqAthcKJZSo%3D--Mnj9kh%2FByD80eyQ3w5%2BXO7LQgEYvYU%2F5kaEdOkec2%2Fg%3D;Path=/;HttpOnly;Expires=Wed,
-        20 Dec 2017 19:19:24 +0000;Max-Age=31536000;Secure
+      - ring-session=tFJLCOCqOFm25WGp%2Bd2ZIE0lB%2Fizi2RQnogWkggqAGiZ30U55cZGO3%2Bn3%2BVDO%2F5L3As%2FI3YVrFT7UR22um0MDr9AnaP7WqrI5foJpHHTlo%2BekDj8WZOKln1Wty2wZojFj%2Ffm%2BwrQp13TX3hCvYjcHZ2WDWoFCRZa079B35Zmqv%2Bt5tKKIadHAx7HWnS5d%2BbGljOZ%2FiD42iU2e%2FO2%2FAiRyOIry2j%2Bt5ZfouXSz0d27B0%3D--Zu2mn%2FtPnL1T3n5KXDy7NpebMoDfxZmn%2BQnosd8sZBA%3D;Path=/;HttpOnly;Expires=Thu,
+        18 Jan 2018 21:15:39 +0000;Max-Age=31536000;Secure
       Strict-Transport-Security:
       - max-age=15724800
       X-Circleci-Identity:
-      - i-07bc88ff
+      - i-90989e68
       X-Circleci-Request-Id:
-      - 6e636378-558e-476f-931d-924bbd9d95a1
+      - 59d6c6be-c09a-42ee-8049-1a2896bc0bdf
       X-Circleci-Scopes:
       - ":all"
       - ":none"
@@ -54,12 +106,12 @@ http_interactions:
       - ":build_num"
       - "\\d+"
       Content-Length:
-      - '170'
+      - '169'
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '[{"path":"/tmp/circle-junit.vCFLHp7/rspec/junit.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/junit.xml","node_index":0,"url":"https://140-9485764-gh.circle-artifacts.com/0/tmp/circle-junit.vCFLHp7/rspec/junit.xml"}]'
+      string: '[{"path":"/tmp/circle-junit.3ZRe0p0/rspec/rspec.xml","pretty_path":"$CIRCLE_TEST_REPORTS/rspec/rspec.xml","node_index":0,"url":"https://1-78449359-gh.circle-artifacts.com/0/tmp/circle-junit.3ZRe0p0/rspec/rspec.xml"}]'
     http_version: 
-  recorded_at: Tue, 20 Dec 2016 20:29:08 GMT
+  recorded_at: Wed, 18 Jan 2017 21:46:41 GMT
 recorded_with: VCR 3.0.3
