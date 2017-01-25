@@ -65,7 +65,7 @@ RSpec.describe CircleCi::Project, :vcr do
 
     context 'with build parameters' do
       let(:params) { { 'ABC' => '123'} }
-      let(:res) { project.build 'master', nil, params }
+      let(:res) { project.build 'master', build_parameters: params }
 
       it 'is verified by response' do
         expect(res).to be_instance_of(CircleCi::Response)

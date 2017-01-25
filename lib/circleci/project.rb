@@ -41,16 +41,9 @@ module CircleCi
     #
     # @param branch            [String] - Name of branch
     # @param params            [Hash] - Optional parameters for build, See https://circleci.com/docs/api/#new-build
-    # @param build_env         [Hash] - Optional build environment variables
     #
     # @return  [CircleCi::Response] - Response object
-    def build(branch, params = {}, build_env = {})
-      params ||= {}
-      if build_env
-        params[:build_parameters] ||= {}
-        params[:build_parameters].merge! build_env
-      end
-
+    def build(branch, params = {})
       CircleCi.request("#{base_path}/tree/#{branch}").post(params)
     end
 

@@ -209,14 +209,12 @@ res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 
 # Passing build parameters in the post body
-build_params = { 'MY_TOKEN' => '123asd123asd' }
-res = project.build 'branch', nil, build_params
+res = project.build 'branch', build_parameters: { 'MY_TOKEN' => '123asd123asd' }
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 
-# Adding URL params for revision or parallel
-params = { revision: 'fda12345asdf', parallel: 2 }
-res = project.build 'branch', params
+# Adding params for revision or parallel
+res = project.build 'branch', { revision: 'fda12345asdf', parallel: 2 }
 res.body['status'] # Not running
 res.body['build_url'] # Get url of build
 ```
